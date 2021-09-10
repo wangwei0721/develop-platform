@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.wcc.platform</groupId>
+    <artifactId>platform-version-bom</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <platform.base.version>1.0.0-SNAPSHOT</platform.base.version>
+        <platform.streaming.flink.version>1.0.0-SNAPSHOT</platform.streaming.flink.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.wcc.platform</groupId>
+                <artifactId>platform-base</artifactId>
+                <version>${platform.base.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wcc.platform</groupId>
+                <artifactId>platform-streaming-base</artifactId>
+                <version>${platform.streaming.flink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wcc.platform</groupId>
+                <artifactId>platform-streaming-flink-core</artifactId>
+                <version>${platform.streaming.flink.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

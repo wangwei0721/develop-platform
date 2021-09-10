@@ -4,13 +4,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.wcc.streaming</groupId>
-    <artifactId>streaming-platform-parent</artifactId>
+    <groupId>com.wcc.platform</groupId>
+    <artifactId>platform-streaming-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+    <modules>
+        <module>platform-streaming-launcher</module>
+        <module>platform-streaming-base</module>
+        <module>platform-streaming-flink-core</module>
+    </modules>
     <packaging>pom</packaging>
 
     <properties>
         <third.party.bom.version>1.0.0-SNAPSHOT</third.party.bom.version>
+        <platform.bom.version>1.0.0-SNAPSHOT</platform.bom.version>
     </properties>
 
     <dependencyManagement>
@@ -19,6 +25,15 @@
                 <groupId>com.wcc.platform</groupId>
                 <artifactId>third-party-bom</artifactId>
                 <version>${third.party.bom.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>com.wcc.platform</groupId>
+                <artifactId>platform-version-bom</artifactId>
+                <version>${platform.bom.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
             </dependency>
         </dependencies>
     </dependencyManagement>
