@@ -1,7 +1,6 @@
 package com.wcc.platform.streaming.job;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.wcc.platform.streaming.enums.EngineType;
 
 /**
  * 任务启动命令行传参
@@ -11,11 +10,11 @@ import java.util.Map;
  */
 public abstract class JobParams {
 
-    protected static final String JOB_CONF = "jobConfig";
-    protected static final String RUN_MODE = "runMode";
-    protected static final String ENGINE_TYPE = "engineType";
-
     protected String[] args;
+
+    public JobParams() {
+        JobParamsFactory.jobParams.put(getEngineType().name(), this.getClass());
+    }
 
     /**
      * 将命令行参数转化为JobConfig对象
@@ -39,5 +38,12 @@ public abstract class JobParams {
      */
     protected abstract JobConfig parse();
 
-
+    /**
+     * 计算引擎类型
+     *
+     * @return com.wcc.platform.streaming.enums.EngineType
+     * @author wangwei
+     * @since 2021-09-10
+     */
+    protected abstract EngineType getEngineType();
 }

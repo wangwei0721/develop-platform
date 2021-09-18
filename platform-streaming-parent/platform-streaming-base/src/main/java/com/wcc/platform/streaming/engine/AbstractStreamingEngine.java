@@ -19,5 +19,5 @@ public abstract class AbstractStreamingEngine implements StreamingEngine {
      * @author wangwei
      * @since 2021-09-10
      */
-    abstract EngineType getEngineType();
+    protected abstract EngineType getEngineType();
 }

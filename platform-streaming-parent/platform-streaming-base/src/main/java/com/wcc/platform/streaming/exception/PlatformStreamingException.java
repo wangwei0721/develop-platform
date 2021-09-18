@@ -8,6 +8,10 @@ public class PlatformStreamingException extends RuntimeException implements Seri
     public PlatformStreamingException() {
     }
 
+    public PlatformStreamingException(String message) {
+        super(message);
+    }
+
     public PlatformStreamingException(Throwable cause) {
         super(cause);
     }

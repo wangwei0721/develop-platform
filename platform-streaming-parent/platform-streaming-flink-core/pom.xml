@@ -10,6 +10,18 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>platform-streaming-flink-core</artifactId>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>6</source>
+                    <target>6</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <properties>
         <scala.version>2.12</scala.version>
@@ -20,9 +32,13 @@
             <groupId>com.wcc.platform</groupId>
             <artifactId>platform-streaming-base</artifactId>
         </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.flink</groupId>-->
+        <!--            <artifactId>flink-streaming-java_${scala.version}</artifactId>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-streaming-java_${scala.version}</artifactId>
+            <artifactId>flink-table-planner_${scala.version}</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
