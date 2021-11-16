@@ -1,5 +1,6 @@
 package com.wcc.platform.streaming.engine;
 
+import com.wcc.platform.streaming.enums.EngineType;
 import com.wcc.platform.streaming.exception.PlatformStreamingException;
 
 import java.util.HashMap;
@@ -7,19 +8,24 @@ import java.util.Map;
 
 public class StreamingEngineFactory {
 
-    static Map<String, Class<? extends StreamingEngine>> engineMap = new HashMap<>();
+    static Map<String, String> engineMap = new HashMap<>();
+
+    static {
+        engineMap.put(EngineType.FLINKSQL.name(), "com.wcc.platform.streaming.flink.core.engine.FlinkStreamingEngine");
+    }
 
     public static StreamingEngine getEngine(String engineType) {
         if (engineType == null) {
             throw new PlatformStreamingException();
         }
-        Class<? extends StreamingEngine> clazz = engineMap.get(engineType.toUpperCase());
-        if (clazz == null) {
-            throw new PlatformStreamingException();
-        }
         try {
-            return clazz.newInstance();
-        } catch (InstantiationException | IllegalAccessException e) {
+            String className = engineMap.get(engineType.toUpperCase());
+            Class<?> clazz = Class.forName(className);
+            if (!StreamingEngine.class.isAssignableFrom(clazz)) {
+                throw new PlatformStreamingException();
+            }
+            return clazz.asSubclass(StreamingEngine.class).newInstance();
+        } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
             throw new PlatformStreamingException(e);
         }
     }

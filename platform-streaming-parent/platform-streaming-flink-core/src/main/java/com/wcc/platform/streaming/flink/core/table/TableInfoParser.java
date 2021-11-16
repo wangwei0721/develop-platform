@@ -4,8 +4,8 @@ import com.wcc.platform.streaming.exception.PlatformStreamingException;
 import com.wcc.platform.streaming.flink.core.enums.TableType;
 import com.wcc.platform.streaming.flink.core.side.SideTableInfo;
 import com.wcc.platform.streaming.flink.core.side.StreamSideFactory;
-import com.wcc.platform.streaming.flink.core.sink.StreamSinkFactory;
-import com.wcc.platform.streaming.flink.core.source.StreamSourceFactory;
+import com.wcc.platform.streaming.flink.core.sink.AbsStreamSinkFactory;
+import com.wcc.platform.streaming.flink.core.source.AbsStreamSourceFactory;
 import com.wcc.platform.streaming.flink.core.sql.CreateTableParser;
 import com.wcc.platform.util.StringUtil;
 
@@ -47,7 +47,7 @@ public class TableInfoParser {
      * @since 2021-09-18
      */
     public TableInfo parseWithTableType(int tableType, CreateTableParser.SqlParserResult parserResult,
-                                        String localPluginRoot) {
+                                        String localPluginRoot) throws IllegalAccessException, InstantiationException, ClassNotFoundException {
         AbsTableParser absTableParser = null;
         Map<String, String> props = parserResult.getPropMap();
         String type = props.get(TYPE_KEY);
@@ -62,7 +62,7 @@ public class TableInfoParser {
             if (!isSideTable) {
                 absTableParser = sourceTableInfoMap.get(type);
                 if (absTableParser == null) {
-                    absTableParser = StreamSourceFactory.getSqlParser(type, localPluginRoot);
+                    absTableParser = AbsStreamSourceFactory.getSqlParser(type, localPluginRoot);
                     sourceTableInfoMap.put(type, absTableParser);
                 }
             } else {
@@ -77,7 +77,7 @@ public class TableInfoParser {
         } else if (tableType == TableType.SINK.getType()) {
             absTableParser = targetTableInfoMap.get(type);
             if (absTableParser == null) {
-                absTableParser = StreamSinkFactory.getSqlParser(type, localPluginRoot);
+                absTableParser = AbsStreamSinkFactory.getSqlParser(type, localPluginRoot);
                 targetTableInfoMap.put(type, absTableParser);
             }
         }

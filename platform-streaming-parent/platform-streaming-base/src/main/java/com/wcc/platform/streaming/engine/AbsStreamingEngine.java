@@ -2,11 +2,7 @@ package com.wcc.platform.streaming.engine;
 
 import com.wcc.platform.streaming.enums.EngineType;
 
-public abstract class AbstractStreamingEngine implements StreamingEngine {
-
-    public AbstractStreamingEngine() {
-        StreamingEngineFactory.engineMap.put(getEngineType().name(), this.getClass());
-    }
+public abstract class AbsStreamingEngine implements StreamingEngine {
 
     @Override
     public void stop() {

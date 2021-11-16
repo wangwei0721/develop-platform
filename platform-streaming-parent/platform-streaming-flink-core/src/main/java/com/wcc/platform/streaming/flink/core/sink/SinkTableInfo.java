@@ -1,5 +1,7 @@
-package com.wcc.platform.streaming.flink.core.table;
+package com.wcc.platform.streaming.flink.core.sink;
 
+
+import com.wcc.platform.streaming.flink.core.table.TableInfo;
 
 import java.io.Serializable;
 

@@ -35,6 +35,8 @@ public abstract class TableInfo implements Serializable {
      */
     private Class<?>[] fieldClasses;
 
+    protected abstract boolean check();
+
     public String getName() {
         return name;
     }

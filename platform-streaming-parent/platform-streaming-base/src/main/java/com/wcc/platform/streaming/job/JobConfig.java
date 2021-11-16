@@ -1,8 +1,5 @@
 package com.wcc.platform.streaming.job;
 
-import com.wcc.platform.streaming.enums.EngineType;
-import com.wcc.platform.streaming.enums.RunMode;
-
 /**
  * 任务通用配置
  *
@@ -11,17 +8,18 @@ import com.wcc.platform.streaming.enums.RunMode;
  */
 public abstract class JobConfig {
 
-    private String id;
-    private String name;
-    private EngineType engineType;
-    private RunMode runMode;
+    protected String jobId;
 
-    public String getId() {
-        return id;
+    protected String name;
+
+    protected String deployMode;
+
+    public String getJobId() {
+        return jobId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
     }
 
     public String getName() {
@@ -32,19 +30,11 @@ public abstract class JobConfig {
         this.name = name;
     }
 
-    public EngineType getEngineType() {
-        return engineType;
+    public String getDeployMode() {
+        return deployMode;
     }
 
-    public void setEngineType(EngineType engineType) {
-        this.engineType = engineType;
-    }
-
-    public RunMode getRunMode() {
-        return runMode;
-    }
-
-    public void setRunMode(RunMode runMode) {
-        this.runMode = runMode;
+    public void setDeployMode(String deployMode) {
+        this.deployMode = deployMode;
     }
 }

@@ -1,7 +1,5 @@
 package com.wcc.platform.streaming.engine;
 
-import com.wcc.platform.streaming.job.JobConfig;
-
 public interface StreamingEngine {
 
     /**
@@ -11,7 +9,7 @@ public interface StreamingEngine {
      * @author wangwei
      * @since 2021-09-10
      */
-    void init(JobConfig jobConfig);
+    void init(String jobConfig);
 
     /**
      * 提交任务启动

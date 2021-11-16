@@ -11,6 +11,8 @@
         <module>platform-streaming-launcher</module>
         <module>platform-streaming-base</module>
         <module>platform-streaming-flink-core</module>
+        <module>platform-streaming-flink-v13</module>
+        <module>platform-streaming-flink-v10</module>
     </modules>
     <packaging>pom</packaging>
 

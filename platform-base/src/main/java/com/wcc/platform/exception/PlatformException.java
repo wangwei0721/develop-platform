@@ -22,7 +22,7 @@ public final class PlatformException extends Exception implements Serializable {
     private String localeMessage;
     private Date time;
     private int type;
-    private PlatformException exception;
+    private Exception exception;
 
     public int getId() {
         return id;
@@ -72,11 +72,11 @@ public final class PlatformException extends Exception implements Serializable {
         this.type = type;
     }
 
-    public PlatformException getException() {
+    public Exception getException() {
         return exception;
     }
 
-    public void setException(PlatformException exception) {
+    public void setException(Exception exception) {
         this.exception = exception;
     }
 

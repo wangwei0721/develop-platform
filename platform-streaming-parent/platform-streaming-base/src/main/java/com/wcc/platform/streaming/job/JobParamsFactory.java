@@ -4,12 +4,14 @@ import com.wcc.platform.streaming.exception.PlatformStreamingException;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ServiceLoader;
 
 public class JobParamsFactory {
 
     static Map<String, Class<? extends JobParams>> jobParams = new HashMap<>();
 
     public static JobParams getJobParams(String engineType) {
+        ServiceLoader.load(JobParams.class);
         if (engineType == null) {
             throw new PlatformStreamingException();
         }
