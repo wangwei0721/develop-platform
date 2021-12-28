@@ -1,0 +1,10 @@
+server:
+  port: 8089
+  servlet:
+    context-path: /platform
+
+spring:
+  application:
+    name: platform
+  profiles:
+    active: dev
