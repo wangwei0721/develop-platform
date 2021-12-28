@@ -1,4 +1,4 @@
-package com.wcc.platform.streaming.flink.core.v10.source.console;
+package com.wcc.platform.streaming.flink.v10.connecotr.sink.console;
 
 import com.wcc.platform.streaming.flink.core.table.AbsTableParser;
 import com.wcc.platform.streaming.flink.core.table.TableInfo;
