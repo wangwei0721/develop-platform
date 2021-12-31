@@ -23,6 +23,16 @@
             </dependency>
             <dependency>
                 <groupId>com.wcc.platform</groupId>
+                <artifactId>platform-spring-base</artifactId>
+                <version>${platform.base.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wcc.platform</groupId>
+                <artifactId>platform-spring-core</artifactId>
+                <version>${platform.base.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wcc.platform</groupId>
                 <artifactId>platform-streaming-base</artifactId>
                 <version>${platform.streaming.flink.version}</version>
             </dependency>

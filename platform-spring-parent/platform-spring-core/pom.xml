@@ -11,8 +11,30 @@
 
     <artifactId>platform-spring-core</artifactId>
 
-
     <dependencies>
-        
+        <dependency>
+            <groupId>com.wcc.platform</groupId>
+            <artifactId>platform-spring-base</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.4.3.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>3.5.1</version>
+        </dependency>
     </dependencies>
+
 </project>
