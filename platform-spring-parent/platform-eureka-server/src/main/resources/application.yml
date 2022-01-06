@@ -1,0 +1,26 @@
+server:
+  port: ${PORT:9000}
+  servlet:
+    context-path: /
+#spring.security
+spring:
+  security:
+    user:
+      name: wcc
+      password: wcc123
+  application:
+    name: EUREKA_SERVER
+# eureka
+eureka:
+  instance:
+    hostname: ${IP:localhost}
+    prefer-ip-address: true
+  client:
+    # 不注册自己
+    register-with-eureka: false
+    # 取消检索服务
+    fetch-registry: false
+    # 服务地址
+    service-url:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka
+
