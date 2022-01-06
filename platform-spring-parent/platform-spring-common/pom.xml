@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>platform-spring-core</artifactId>
+    <artifactId>platform-spring-common</artifactId>
 
     <dependencies>
         <dependency>
@@ -40,7 +40,6 @@
             <artifactId>springfox-boot-starter</artifactId>
             <version>3.0.0</version>
         </dependency>
-
     </dependencies>
 
 </project>

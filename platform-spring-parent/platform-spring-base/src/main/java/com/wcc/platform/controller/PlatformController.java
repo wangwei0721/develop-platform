@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j
-public class IndexController {
+public class PlatformController {
 
     @Value("${spring.application.name}")
     String platform;
 
-    @GetMapping("/")
+    @GetMapping("/hello")
     public Object hello() {
         return ResultUtil.ok(String.format("welcome to %s", platform));
     }

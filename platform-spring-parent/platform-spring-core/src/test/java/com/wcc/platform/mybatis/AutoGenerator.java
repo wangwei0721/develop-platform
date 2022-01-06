@@ -14,7 +14,7 @@ import java.util.Collections;
 @Slf4j
 public class AutoGenerator {
 
-    static String url = "jdbc:mysql://10.45.46.116:3306/zstream";
+    static String url = "jdbc:mysql://10.45.46.116:3306/ksrm";
     static String username = "root";
     static String password = "bdp123";
 
@@ -55,8 +55,8 @@ public class AutoGenerator {
                 .packageConfig(builder -> {
                     builder.parent("com.wcc.platform")
                             .moduleName(module)
-                            .entity("bean")
-                            .pathInfo(Collections.singletonMap(OutputFile.mapperXml, "../..//mybatisplus"));
+                            .entity("com.example.platform.bean")
+                            .pathInfo(Collections.singletonMap(OutputFile.mapperXml, "../../mybatisplus"));
                 })
                 .strategyConfig(builder -> {
                     builder.addInclude(tableName)
@@ -74,7 +74,7 @@ public class AutoGenerator {
 
     @Test
     public void AutoGenerator() {
-        autoGenerator("wcc_sys_datasource", "wcc_sys", "system");
+        autoGenerator("wcc_sys_zuul_route_config", "wcc_sys", "system");
     }
 
 }

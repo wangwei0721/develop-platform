@@ -1,4 +1,4 @@
-package com.wcc.platform;
+package com.example.platform;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

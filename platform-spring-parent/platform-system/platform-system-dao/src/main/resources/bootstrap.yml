@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      # 必须放在bootstrap.yml，其优先级最高且不会被覆盖
+      name: config
+      profile: ${profile:dev}
+      uri: http://127.0.0.1:3333/CONFIG-SERVER
