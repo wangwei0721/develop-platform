@@ -1,0 +1,17 @@
+# servlet 相关
+server:
+  port: 3333
+  servlet:
+    context-path: /CONFIG-SERVER
+# spring 相关
+spring:
+  application:
+    name: confg-server
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          # search-locations: classpath:/config
+          search-locations: /Users/wangwei/IdeaProjects/example/develop-platform/platform-spring-parent/config
