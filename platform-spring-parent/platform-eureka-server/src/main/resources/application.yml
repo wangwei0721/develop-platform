@@ -14,7 +14,7 @@ spring:
 eureka:
   instance:
     hostname: ${IP:localhost}
-    prefer-ip-address: true
+    prefer-ip-address: false
   client:
     # 不注册自己
     register-with-eureka: false

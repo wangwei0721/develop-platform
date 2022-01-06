@@ -1,12 +1,13 @@
 # servlet 相关
 server:
   port: 3333
-  servlet:
-    context-path: /CONFIG-SERVER
+#  向eureka注册时，不设置context-path，否则无法识别
+#  servlet:
+#    context-path: /CONFIG-SERVER
 # spring 相关
 spring:
   application:
-    name: confg-server
+    name: CONFIG-SERVER
   profiles:
     active: native
   cloud:
